@@ -92,7 +92,7 @@ class StageSwitcher {
       }
 
       <?php
-      if (apply_filters('bedrock/stage_switcher_colors', self::default_environment_colors())) {
+      if (!empty( $this->stages) && apply_filters('bedrock/stage_switcher_colors', self::default_environment_colors())) {
         foreach ($this->stages as $stage) {
           if (empty($environment_colors[$stage])) {
               continue;
